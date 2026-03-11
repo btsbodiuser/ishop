@@ -21,11 +21,11 @@ const HomePage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="max-w-3xl">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-              Чанартай бүтээгдэхүүн
-              <span className="block text-blue-200 mt-2">Танай гэрт хүргэнэ</span>
+              Чанартай бүтээгдэхүүнийг
+              <span className="block text-blue-200 mt-2">Солонгосоос шууд</span>
             </h1>
             <p className="text-base sm:text-lg text-blue-100 mb-6">
-              Солонгосын томоохон дэлгүүрүүдээс (E-mart, Costco, Lotte, Olive Young) шууд авчирсан гэр ахуйн бараа, гоо сайхны бүтээгдэхүүн, эрүү�� мэндийн нэмэлт бүтээгдэхүүн
+              Солонгосын томоохон дэлгүүрүүдээс (E-mart, Costco, Lotte, Olive Young) шууд авчирсан гэр ахуйн бараа, гоо сайхны бүтээгдэхүүн, эрүүл мэндийн нэмэлт бүтээгдэхүүн
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
