@@ -4,6 +4,7 @@ import { useApp } from '../context/AppContext';
 import { Trash2, ShoppingBag, Plus, Minus } from 'lucide-react';
 import { toast } from 'sonner';
 import { RootLayout } from '../components/RootLayout';
+import { url } from '../utils';
 
 const CartPage = () => {
   const { cart, updateCartQuantity, removeFromCart, cartTotal, cartCount } = useApp();
@@ -40,7 +41,7 @@ const CartPage = () => {
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Таны сагс хоосон байна</h2>
           <p className="text-gray-600 mb-6">Бүтээгдэхүүн нэмж эхлээрэй!</p>
           <button
-            onClick={() => router.visit('/')}
+            onClick={() => router.visit(url('/'))}
             className="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
           >
             Дэлгүүр үзэх
@@ -148,14 +149,14 @@ const CartPage = () => {
             </div>
 
             <button
-              onClick={() => router.visit('/checkout')}
+              onClick={() => router.visit(url('/checkout'))}
               className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors mb-3"
             >
               Худалдаж авах
             </button>
 
             <button
-              onClick={() => router.visit('/')}
+              onClick={() => router.visit(url('/'))}
               className="w-full bg-gray-100 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
             >
               Үргэлжлүүлэх

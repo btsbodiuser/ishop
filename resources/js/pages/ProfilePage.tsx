@@ -3,6 +3,7 @@ import { useApp } from '../context/AppContext';
 import { router } from '@inertiajs/react';
 import { User, MapPin, LogOut, Phone, Plus, Trash2, Edit2, Package, Clock, CheckCircle, Truck, XCircle, Search } from 'lucide-react';
 import { toast } from 'sonner';
+import { url } from '../utils';
 import { districts } from '../data/districts';
 import { Order } from '../types';
 import { RootLayout } from '../components/RootLayout';
@@ -501,7 +502,7 @@ const ProfilePage = () => {
                   {/* Track Order Button */}
                   <div className="mt-4 pt-4 border-t">
                     <button
-                      onClick={() => router.visit(`/order-tracking/${order.orderNumber}`)}
+                      onClick={() => router.visit(url(`/order-tracking/${order.orderNumber}`))}
                       className="w-full sm:w-auto px-6 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
                     >
                       <Search className="w-4 h-4" />

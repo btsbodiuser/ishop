@@ -7,6 +7,7 @@ import { ChevronRight, TrendingUp, Package, Sparkles, Clock } from 'lucide-react
 import { useApp } from '../context/AppContext';
 
 import { RootLayout } from '../components/RootLayout';
+import { url } from '../utils';
 
 const HomePage = () => {
   const featuredProducts = products.filter((p) => p.originalPrice).slice(0, 6);
@@ -28,14 +29,14 @@ const HomePage = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
-                to="/all-items"
+                href={url('/all-items')}
                 className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center gap-2"
               >
                 <Package className="w-5 h-5" />
                 Бүх бараа үзэх
               </Link>
               <Link
-                to="/all-items?preorder=true"
+                href={url('/all-items?preorder=true')}
                 className="bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors inline-flex items-center gap-2"
               >
                 <Sparkles className="w-5 h-5" />
@@ -74,7 +75,7 @@ const HomePage = () => {
               return (
                 <Link
                   key={shop.id}
-                  to={`/shop/${shop.id}`}
+                  href={url(`/shop/${shop.id}`)}
                   className={`bg-gradient-to-br ${gradient} rounded-xl p-4 md:p-6 text-center hover:shadow-lg transition-shadow group`}
                 >
                   <div className={`text-2xl md:text-3xl font-bold ${shop.color} mb-2 group-hover:scale-110 transition-transform`}>
@@ -93,7 +94,7 @@ const HomePage = () => {
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8">Ангилал</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
           <Link
-            to="/category/home-appliance"
+            href={url('/category/home-appliance')}
             className="group relative h-48 md:h-56 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow col-span-2"
           >
             <img
@@ -110,7 +111,7 @@ const HomePage = () => {
           </Link>
 
           <Link
-            to="/category/beauty"
+            href={url('/category/beauty')}
             className="group relative h-48 md:h-56 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow col-span-2"
           >
             <img
@@ -127,7 +128,7 @@ const HomePage = () => {
           </Link>
 
           <Link
-            to="/category/supplement"
+            href={url('/category/supplement')}
             className="group relative h-48 md:h-56 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow col-span-2"
           >
             <img
@@ -144,7 +145,7 @@ const HomePage = () => {
           </Link>
 
           <Link
-            to="/all-items?type=ready"
+            href={url('/all-items?type=ready')}
             className="group relative h-48 md:h-56 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow col-span-1"
           >
             <img
@@ -161,7 +162,7 @@ const HomePage = () => {
           </Link>
 
           <Link
-            to="/all-items?preorder=true"
+            href={url('/all-items?preorder=true')}
             className="group relative h-48 md:h-56 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow col-span-1"
           >
             <img
@@ -178,7 +179,7 @@ const HomePage = () => {
           </Link>
 
           <Link
-            to="/all-items?discount=true"
+            href={url('/all-items?discount=true')}
             className="group relative h-48 md:h-56 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow col-span-1"
           >
             <img
@@ -195,7 +196,7 @@ const HomePage = () => {
           </Link>
 
           <Link
-            to="/all-items?new=true"
+            href={url('/all-items?new=true')}
             className="group relative h-48 md:h-56 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow col-span-1"
           >
             <img
@@ -220,7 +221,7 @@ const HomePage = () => {
             <TrendingUp className="w-7 h-7 text-red-500" />
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Онцлох хямдрал</h2>
           </div>
-          <Link href="/category/home-appliance" className="text-blue-600 hover:text-blue-700 font-medium flex items-center">
+          <Link href={url('/category/home-appliance')} className="text-blue-600 hover:text-blue-700 font-medium flex items-center">
             Бүгдийг үзэх <ChevronRight className="w-5 h-5" />
           </Link>
         </div>

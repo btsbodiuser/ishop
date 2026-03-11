@@ -2,6 +2,12 @@
  * Global Constants for Noomko E-commerce
  */
 
+// Base path for the application (subdirectory)
+export const BASE_PATH = '/ishop';
+
+// Prefix a path with the base path
+export const url = (path: string): string => `${BASE_PATH}${path}`;
+
 // Company Information
 export const COMPANY_INFO = {
   name: 'Noomko',

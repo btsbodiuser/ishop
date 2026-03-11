@@ -5,6 +5,7 @@ import { MapPin, CheckCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import { districts } from '../data/districts';
 import { RootLayout } from '../components/RootLayout';
+import { url } from '../utils';
 
 const CheckoutPage = () => {
   const { cart, cartTotal, isAuthenticated, user, clearCart, addOrder } = useApp();
@@ -26,7 +27,7 @@ const CheckoutPage = () => {
 
   useEffect(() => {
     if (cart.length === 0 && step !== 'complete') {
-      router.visit('/cart');
+      router.visit(url('/cart'));
     }
   }, [cart.length, step, navigate]);
 
@@ -38,7 +39,7 @@ const CheckoutPage = () => {
     e.preventDefault();
     if (!isAuthenticated) {
       toast.error('Нэвтэрнэ үү');
-      router.visit('/profile');
+      router.visit(url('/profile'));
       return;
     }
     setStep('payment');
@@ -88,13 +89,13 @@ const CheckoutPage = () => {
           </div>
           <div className="space-y-3">
             <button
-              onClick={() => router.visit('/')}
+              onClick={() => router.visit(url('/'))}
               className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
             >
               Дэлгүүр үзэх
             </button>
             <button
-              onClick={() => router.visit('/profile')}
+              onClick={() => router.visit(url('/profile'))}
               className="w-full bg-gray-100 text-gray-700 py-3 rounded-lg font-semibold hover:bg-gray-200 transition-colors"
             >
               Захиалга харах

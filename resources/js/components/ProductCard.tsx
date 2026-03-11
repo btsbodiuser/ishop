@@ -3,6 +3,7 @@ import { Link } from '@inertiajs/react';
 import { Star, Package, Clock } from 'lucide-react';
 import { Product } from '../types';
 import { getShopInfo } from '../data/shops';
+import { url } from '../utils';
 
 interface ProductCardProps {
   product: Product;
@@ -16,7 +17,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   const shopInfo = getShopInfo(product.shop);
 
   return (
-    <Link href={`/product/${product.id}`} className="group">
+    <Link href={url(`/product/${product.id}`)} className="group">
       <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
         <div className="relative aspect-square overflow-hidden bg-gray-100">
           <img

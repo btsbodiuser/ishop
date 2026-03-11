@@ -2,16 +2,17 @@ import React, { useState } from 'react';
 import { Link, router } from '@inertiajs/react';
 import { ShoppingCart, User, Menu, Search, Package } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { url } from '../utils';
 
 export const Header = () => {
   const { cartCount, isAuthenticated, logout } = useApp();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const categories = [
-    { id: 'all-items', name: 'Бүх бараа', path: '/all-items' },
-    { id: 'home-appliance', name: 'Гэр ахуйн бараа', path: '/category/home-appliance' },
-    { id: 'beauty', name: 'Гоо сайхан', path: '/category/beauty' },
-    { id: 'supplement', name: 'Эрүүл мэнд', path: '/category/supplement' },
+    { id: 'all-items', name: 'Бүх бараа', path: url('/all-items') },
+    { id: 'home-appliance', name: 'Гэр ахуйн бараа', path: url('/category/home-appliance') },
+    { id: 'beauty', name: 'Гоо сайхан', path: url('/category/beauty') },
+    { id: 'supplement', name: 'Эрүүл мэнд', path: url('/category/supplement') },
   ];
 
   return (
@@ -36,7 +37,7 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href={url('/')} className="flex items-center space-x-2">
             <div className="bg-blue-600 text-white px-3 py-1.5 rounded-lg font-bold text-lg">
               N
             </div>
@@ -66,14 +67,14 @@ export const Header = () => {
             </button>
 
             <button
-              onClick={() => router.visit('/profile')}
+              onClick={() => router.visit(url('/profile'))}
               className="p-2 text-gray-700 hover:text-blue-600 transition-colors"
             >
               <User className="w-5 h-5" />
             </button>
 
             <button
-              onClick={() => router.visit('/cart')}
+              onClick={() => router.visit(url('/cart'))}
               className="relative p-2 text-gray-700 hover:text-blue-600 transition-colors"
             >
               <ShoppingCart className="w-5 h-5" />

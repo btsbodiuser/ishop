@@ -3,6 +3,7 @@ import { Link } from '@inertiajs/react';
 import { Header } from './Header';
 import { AppProvider } from '../context/AppContext';
 import { Toaster } from 'sonner';
+import { url } from '../utils';
 
 export const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -26,22 +27,22 @@ export const RootLayout = ({ children }: { children: React.ReactNode }) => {
                 <h4 className="font-semibold mb-4">Үйлчилгээ</h4>
                 <ul className="space-y-2 text-sm text-gray-400">
                   <li>
-                    <Link href="/contact" className="hover:text-white transition-colors">
+                    <Link href={url('/contact')} className="hover:text-white transition-colors">
                       Холбоо барих
                     </Link>
                   </li>
                   <li>
-                    <Link href="/delivery" className="hover:text-white transition-colors">
+                    <Link href={url('/delivery')} className="hover:text-white transition-colors">
                       Хүргэлтийн мэдээлэл
                     </Link>
                   </li>
                   <li>
-                    <Link href="/returns" className="hover:text-white transition-colors">
+                    <Link href={url('/returns')} className="hover:text-white transition-colors">
                       Буцаалт солилт
                     </Link>
                   </li>
                   <li>
-                    <Link href="/faq" className="hover:text-white transition-colors">
+                    <Link href={url('/faq')} className="hover:text-white transition-colors">
                       Түгээмэл асуулт
                     </Link>
                   </li>

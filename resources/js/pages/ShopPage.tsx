@@ -6,6 +6,7 @@ import { products, getCategoryName } from '../data/products';
 import { getShopInfo } from '../data/shops';
 import { Filter, ChevronLeft, SlidersHorizontal } from 'lucide-react';
 import { RootLayout } from '../components/RootLayout';
+import { url } from '../utils';
 
 const ShopPage = ({ shopId }: { shopId: string }) => {
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
@@ -45,7 +46,7 @@ const ShopPage = ({ shopId }: { shopId: string }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <h1 className="text-2xl font-bold text-gray-900 mb-4">Дэлгүүр олдсонгүй</h1>
         <button
-          onClick={() => router.visit('/')}
+          onClick={() => router.visit(url('/'))}
           className="text-blue-600 hover:text-blue-700 font-medium"
         >
           Нүүр хуудас руу буцах
@@ -137,7 +138,7 @@ const ShopPage = ({ shopId }: { shopId: string }) => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Back Button */}
       <button
-        onClick={() => router.visit('/')}
+        onClick={() => router.visit(url('/'))}
         className="flex items-center text-gray-600 hover:text-gray-900 mb-6 font-medium"
       >
         <ChevronLeft className="w-5 h-5" />

@@ -3,6 +3,7 @@ import { router } from '@inertiajs/react';
 import { useApp } from '../context/AppContext';
 import { Package, Truck, CheckCircle, XCircle, Clock, MapPin, Phone, User } from 'lucide-react';
 import { RootLayout } from '../components/RootLayout';
+import { url } from '../utils';
 
 const OrderTrackingPage = ({ orderNumber: initialOrderNumber }: { orderNumber?: string }) => {
   const { user } = useApp();
@@ -85,7 +86,7 @@ const OrderTrackingPage = ({ orderNumber: initialOrderNumber }: { orderNumber?: 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchOrderNumber.trim()) {
-      router.visit(`/order-tracking/${searchOrderNumber}`);
+      router.visit(url(`/order-tracking/${searchOrderNumber}`));
     }
   };
 
@@ -276,7 +277,7 @@ const OrderTrackingPage = ({ orderNumber: initialOrderNumber }: { orderNumber?: 
                   7711-1234
                 </a>
                 <button
-                  onClick={() => router.visit('/contact')}
+                  onClick={() => router.visit(url('/contact'))}
                   className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
                 >
                   Холбоо барих
@@ -296,7 +297,7 @@ const OrderTrackingPage = ({ orderNumber: initialOrderNumber }: { orderNumber?: 
             <button
               onClick={() => {
                 setSearchOrderNumber('');
-                router.visit('/order-tracking');
+                router.visit(url('/order-tracking'));
               }}
               className="text-blue-600 hover:text-blue-700 font-medium"
             >
@@ -318,7 +319,7 @@ const OrderTrackingPage = ({ orderNumber: initialOrderNumber }: { orderNumber?: 
         {/* Back Button */}
         <div className="mt-8 text-center">
           <button
-            onClick={() => router.visit('/profile')}
+            onClick={() => router.visit(url('/profile'))}
             className="text-blue-600 hover:text-blue-700 font-medium"
           >
             ← Профайл руу буцах

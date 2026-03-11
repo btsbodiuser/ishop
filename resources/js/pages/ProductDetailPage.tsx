@@ -7,6 +7,7 @@ import { Star, ShoppingCart, Package, Clock, Truck, Shield, ChevronLeft, Store }
 import { useApp } from '../context/AppContext';
 import { toast } from 'sonner';
 import { RootLayout } from '../components/RootLayout';
+import { url } from '../utils';
 
 const ProductDetailPage = ({ productId }: { productId: string }) => {
   const { addToCart, addRecentlyViewed } = useApp();
@@ -26,7 +27,7 @@ const ProductDetailPage = ({ productId }: { productId: string }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <h1 className="text-2xl font-bold text-gray-900 mb-4">Бүтээгдэхүүн олдсонгүй</h1>
         <button
-          onClick={() => router.visit('/')}
+          onClick={() => router.visit(url('/'))}
           className="text-blue-600 hover:text-blue-700 font-medium"
         >
           Нүүр хуудас руу буцах
@@ -87,7 +88,7 @@ const ProductDetailPage = ({ productId }: { productId: string }) => {
           {/* Shop Badge */}
           {shopInfo && (
             <button
-              onClick={() => router.visit(`/shop/${product.shop}`)}
+              onClick={() => router.visit(url(`/shop/${product.shop}`))}
               className={`${shopInfo.bgColor} ${shopInfo.color} px-4 py-2 rounded-lg font-semibold mb-4 inline-flex items-center gap-2 hover:shadow-md transition-shadow`}
             >
               <Store className="w-4 h-4" />
@@ -199,7 +200,7 @@ const ProductDetailPage = ({ productId }: { productId: string }) => {
           <button
             onClick={() => {
               handleAddToCart();
-              router.visit('/cart');
+              router.visit(url('/cart'));
             }}
             className="w-full bg-gray-900 text-white py-4 rounded-lg font-semibold text-lg hover:bg-gray-800 transition-colors mb-8"
           >

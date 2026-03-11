@@ -6,9 +6,7 @@ import '../css/app.css';
 createInertiaApp({
     title: (title) => title ? `${title} - Noomko` : 'Noomko Дэлгүүр',
     resolve: (name) =>
-        resolvePageComponent(
-            `./pages/${name}.tsx`,
-            import.meta.glob('./pages/**/*.tsx'),
+        resolvePageComponent(`./pages/${name}.tsx`, import.meta.glob('./pages/**/*.tsx'),
         ),
     setup({ el, App, props }) {
         createRoot(el).render(<App {...props} />);
